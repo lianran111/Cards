@@ -13,12 +13,12 @@
   ],
   "autoload": {
     "psr-4":{
-      "Kevin\\Cards\\":"lib/"
+      "Wei\\Cards\\":"lib/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Kevin\\Cards\\Tests\\": "tests"
+      "Wei\\Cards\\Tests\\": "tests"
     }
   },
   "require-dev": {
