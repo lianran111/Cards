@@ -1,4 +1,5 @@
 <?php
+
 namespace Wei\Cards\IDCards;
 
 /**
@@ -6,8 +7,8 @@ namespace Wei\Cards\IDCards;
  * Class IDCard
  * @package Wei\Cards
  */
-class IDCard18 extends IDCardBase{
-
+class IDCard18 extends IDCardBase
+{
     protected function validate()
     {
         return $this->len == IDCardType::BIT_18 ? true : false;
@@ -15,16 +16,16 @@ class IDCard18 extends IDCardBase{
 
     protected function setBirthday()
     {
-        $birthday[] = substr($this->idCard, 6, 4);
-        $birthday[] = substr($this->idCard, 10, 2);
-        $birthday[] = substr($this->idCard, 12, 2);
+        $birthday[]     = substr($this->idCard, 6, 4);
+        $birthday[]     = substr($this->idCard, 10, 2);
+        $birthday[]     = substr($this->idCard, 12, 2);
         $this->birthday = implode("-", $birthday);
     }
 
     protected function setSex()
     {
-        $sex = substr($this->idCard, 16, 1);
-        $this->sex = $sex%2 == 1 ? self::SEX_MALE : self::SEX_FEMALE;
+        $sex       = substr($this->idCard, 16, 1);
+        $this->sex = $sex % 2 == 1 ? self::SEX_MALE : self::SEX_FEMALE;
     }
 
     protected function setType()
@@ -45,10 +46,9 @@ class IDCard18 extends IDCardBase{
     /**
      * 18位转15位身份证
      */
-    public function convertTo15(){
-        $idCard15 = '';
-        $idCard15 = substr($this->idCard, 0, 6).substr($this->idCard, 8, 9);
+    public function convertTo15()
+    {
+        $idCard15 = substr($this->idCard, 0, 6) . substr($this->idCard, 8, 9);
         return $idCard15;
     }
-
 }

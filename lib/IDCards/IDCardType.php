@@ -1,7 +1,9 @@
 <?php
+
 namespace Wei\Cards\IDCards;
 
-class IDCardType{
+class IDCardType
+{
     /**
      * 一代身份证
      */

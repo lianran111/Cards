@@ -1,4 +1,5 @@
 <?php
+
 namespace Wei\Cards\IDCards;
 
 use Wei\Cards\Base;
@@ -8,7 +9,8 @@ use Wei\Cards\Base;
  * Class IDCard
  * @package Wei\Cards
  */
-abstract class IDCardBase extends Base {
+abstract class IDCardBase extends Base
+{
     /**
      * 男
      */
@@ -20,7 +22,7 @@ abstract class IDCardBase extends Base {
     /**
      * @var null 身份证
      */
-    protected $idCard   = null;
+    protected $idCard = null;
     /**
      * @var null 省份
      */
@@ -28,11 +30,11 @@ abstract class IDCardBase extends Base {
     /**
      * @var null 城市
      */
-    protected $city     = null;
+    protected $city = null;
     /**
      * @var null 地区
      */
-    protected $area     = null;
+    protected $area = null;
     /**
      * @var null 生日
      */
@@ -41,17 +43,17 @@ abstract class IDCardBase extends Base {
     /**
      * @var null 性别
      */
-    protected $sex      = null;
+    protected $sex = null;
 
     /**
      * @var int 长度
      */
-    protected $len      = 0;
+    protected $len = 0;
 
     /**
      * @var null 类型
      */
-    protected $type     = null;
+    protected $type = null;
     /**
      * @var string 顺序码
      */
@@ -59,7 +61,7 @@ abstract class IDCardBase extends Base {
     /**
      * @var string 校验码
      */
-    protected $verifyCode   = '';
+    protected $verifyCode = '';
 
     protected function __construct($idCard)
     {
@@ -72,10 +74,11 @@ abstract class IDCardBase extends Base {
      * @param string $idCard 身份证
      * @return null|IDCardBase
      */
-    public static function getInstance($idCard){
+    public static function getInstance($idCard)
+    {
         /* @var $obj IDCardBase */
-        $class  = get_called_class();
-        $obj    =  new $class($idCard);
+        $class = get_called_class();
+        $obj   = new $class($idCard);
         return $obj->validate() ? $obj : null;
     }
 
@@ -84,6 +87,7 @@ abstract class IDCardBase extends Base {
      * @return bool
      */
     protected abstract function validate();
+
     /**
      * 解析
      * @see IDCardBase::setProvince()
@@ -94,7 +98,8 @@ abstract class IDCardBase extends Base {
      * @see IDCardBase::setLen()
      * @see IDCardBase::getSequenceCode()
      */
-    protected function parse(){
+    protected function parse()
+    {
         $this->setProvince();
         $this->setCity();
         $this->setArea();
@@ -113,7 +118,6 @@ abstract class IDCardBase extends Base {
     {
         return $this->idCard;
     }
-
 
     /**
      * @return null
@@ -175,7 +179,6 @@ abstract class IDCardBase extends Base {
      * 设置生日
      */
     protected abstract function setBirthday();
-
 
     /**
      * @return null
@@ -244,6 +247,4 @@ abstract class IDCardBase extends Base {
      * 设置验证码
      */
     protected abstract function setVerifyCode();
-
-
 }

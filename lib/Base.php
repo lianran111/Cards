@@ -1,6 +1,7 @@
 <?php
+
 namespace Wei\Cards;
 
-class Base{
-
+class Base
+{
 }

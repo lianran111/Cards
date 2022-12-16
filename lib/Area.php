@@ -1,4 +1,5 @@
 <?php
+
 namespace Wei\Cards;
 
 /**
@@ -17,7 +18,7 @@ class Area
     {
         static $areaArr = null;
         if ($areaArr === null) {
-            $areaArr = json_decode(file_get_contents(__DIR__.'/area-code.json'), true);
+            $areaArr = json_decode(file_get_contents(__DIR__ . '/area-code.json'), true);
         }
         return $areaArr;
     }

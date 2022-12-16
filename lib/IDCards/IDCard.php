@@ -1,4 +1,5 @@
 <?php
+
 namespace Wei\Cards\IDCards;
 
 /**
@@ -6,17 +7,18 @@ namespace Wei\Cards\IDCards;
  * Class IDCard
  * @package Wei\Cards
  */
-class IDCard{
-
+class IDCard
+{
     /**
      * 根据身份证获取解析身份实例
      * @param string $idCard 身份证信息
      * @return null|IDCardBase|IDCard18|IDCard15
      */
-    public static function getInstance($idCard){
+    public static function getInstance($idCard)
+    {
         $obj = null;
         $len = strlen($idCard);
-        switch ($len){
+        switch ($len) {
             case 15://1代身份证
                 $obj = IDCard15::getInstance($idCard);
                 break;
